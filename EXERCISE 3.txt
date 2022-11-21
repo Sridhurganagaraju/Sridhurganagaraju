@@ -1,0 +1,179 @@
+SQL> create table dept5 (deptno numeric(3),deptname varchar2(10), deptloc varchar2(10));
+
+Table created.
+
+SQL> insert into dept5(deptno,deptname,deptloc)values(101,'inventory','delhi');
+
+1 row created.
+
+
+SQL>  insert into dept5 values (102,'sales','mumbai');
+
+1 row created.
+SQL>  insert into dept5 values(103,'sales','chennai');
+
+
+
+2. SQL>  create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(35));
+
+Table created.
+
+SQL> insert into employee3 values(301,'siri',10,20000);
+
+1 row created.
+
+SQL> insert into employee3 values(302,'rakshitha',70,50000);
+
+1 row created.
+
+SQL> insert into employee3 values(305,'nav',50,60000);
+
+1 row created.
+
+SQL> insert into employee3 values(306,'durga',30,40000);
+
+1 row created.
+
+SQL> select*from employee3;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 rakshitha                    70      50000
+       305 nav                          50      60000
+       306 durga                         30      40000
+
+
+5. SQL> create table employee as select*from employee3;
+
+Table created.
+
+SQL> select*from employee;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 rakshitha                         70      50000
+       305 nav                          50      60000
+       306 durga                         30      40000
+
+
+
+6.
+SQL> create table employee6(empno numeric(3),ename varchar2(20), deptno numeric(2),sal numeric(25),job varchar(30));
+
+Table created.
+
+
+SQL> insert into employee6 values(201,'durga',4,20000,'teacher');
+
+1 row created.
+
+SQL> insert into employee6 values(202,'naya',5,34000,'engineer');
+
+1 row created.
+
+SQL> insert into employee6 values(203,'rakshitha',6,45000,'business');
+
+1 row created.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       201 durga                           4      20000
+teacher
+
+       202 naya                          5      34000
+engineer
+
+       203 rakshitha                         6      45000
+business
+
+
+SQL> select ename,job from employee6;
+
+ENAME                JOB
+-------------------- ------------------------------
+durga                  teacher
+naya                 engineer
+rakshitha                business
+
+
+
+7. SQL> delete employee6 where job='teacher';
+
+1 row deleted
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 navya                          5      34000
+engineer
+
+       203 rakshitha                         6      45000
+business
+
+
+
+
+
+
+8. SQL> create table emp8(empno numeric(2),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6));
+
+Table created.
+
+
+SQL> insert into employee6 values(204,'sara',30,45000,'lecturer');
+
+1 row created.
+
+SQL> select *from employee6 where deptno=30;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       204 sara                         30      45000
+lecturer
+
+
+7. SQL> delete employee6 where job='lecturer';
+
+1 row deleted.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 rakshitha                          6      45000
+business
+
+
+9. SQL> select distinct deptno from employee6;
+
+    DEPTNO
+----------
+         6
+         5
+
+
+
+
+
+
+
+
+
+
+
+
